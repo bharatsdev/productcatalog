@@ -23,23 +23,23 @@ public class ProductCatalogResources {
 	@Autowired
 	IProductCatalogService iProductCatalogService;
 
-	@GetMapping("/productcatalog/{sku}")
-	public ResponseEntity<SseEmitter> doNotify(@PathVariable("sku") Integer sku)
+	@GetMapping("/productcatalog/{productsku}")
+	public ResponseEntity<SseEmitter> doNotify(@PathVariable("productsku") Integer productsku)
 			throws InterruptedException, IOException {
 		final SseEmitter emitter = new SseEmitter();
 		service.addEmitter(emitter);
-		service.changeNofiy(sku);
+		service.changeNofiy(productsku);
 		emitter.onCompletion(() -> service.removeEmitter(emitter));
 		emitter.onTimeout(() -> service.removeEmitter(emitter));
 		return new ResponseEntity<>(emitter, HttpStatus.OK);
 	}
 
-	@PostMapping("/productcatalog/{sku}/{quantity}")
-	public String saleProduct(@PathVariable("sku") Integer sku, @PathVariable("quantity") Integer quantity)
+	@PostMapping("/productcatalog/{productsku}/{quantity}")
+	public String saleProduct(@PathVariable("productsku") Integer productsku, @PathVariable("quantity") Integer quantity)
 			throws InterruptedException, IOException {		
-		System.out.println(sku +" <0000> "+quantity);
-		this.iProductCatalogService.updateSoldProduct(sku,quantity);
-		service.changeNofiy(sku);
+		System.out.println(productsku +" <0000> "+quantity);
+		this.iProductCatalogService.updateSoldProduct(productsku,quantity);
+		service.changeNofiy(productsku);
 		return "OK";
 	}
 
