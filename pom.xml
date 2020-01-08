@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sapient</groupId>
-	<artifactId>OnlineOrder</artifactId>
+	<artifactId>OnlineShopping</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>OnlineOrderProcessing</name>
-	<description>Online Order Processing System</description>
+	<name>OnlineShopping</name>
+	<description>Online Shoppingg System</description>
 
 	<properties>
 		<java.version>1.8</java.version>

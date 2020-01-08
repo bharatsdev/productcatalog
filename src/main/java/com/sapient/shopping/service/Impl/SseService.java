@@ -17,9 +17,8 @@ import com.sapient.shopping.repository.IProductCatalogRepo;
 @Service
 public class SseService {
 
-	final DateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss a");
 	final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();
-	
+
 	@Autowired
 	IProductCatalogRepo iProductCatalogRepo;
 
@@ -35,7 +34,7 @@ public class SseService {
 	public void changeNofiy(Integer productSku) throws IOException {
 		List<SseEmitter> deadEmitters = new ArrayList<>();
 		emitters.forEach(emitter -> {
-			try { 
+			try {
 				emitter.send(SseEmitter.event().data(iProductCatalogRepo.getByProductSku(productSku)));
 			} catch (Exception e) {
 				deadEmitters.add(emitter);
@@ -43,5 +42,5 @@ public class SseService {
 		});
 		emitters.removeAll(deadEmitters);
 	}
- 
+
 }

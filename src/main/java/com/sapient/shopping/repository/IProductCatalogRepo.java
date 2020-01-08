@@ -23,7 +23,6 @@ public interface IProductCatalogRepo extends JpaRepository<ProductCatalog, Integ
 
 	@Modifying
 	@Query("update ProductCatalog u set u.productCount = (u.productCount-:quantity) where u.productSku=:productSku")
-	List<ProductCatalog> updateSoldProduct(@Param("productSku") Integer productSku,
-			@Param("quantity") Integer quantity);
+	void updateSoldProduct(@Param("productSku") Integer productSku, @Param("quantity") Integer quantity);
 
 }

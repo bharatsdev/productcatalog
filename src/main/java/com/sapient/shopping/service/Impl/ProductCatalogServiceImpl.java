@@ -28,11 +28,11 @@ public class ProductCatalogServiceImpl implements IProductCatalogService {
 	public List<ProductCatalog> getByProductSku(Integer productSku) {
 		return iProductCatalogRepo.getByProductSku(productSku);
 	}
-	
- 	@Override
+
+	@Override
 	@Transactional
-	public List<ProductCatalog> updateSoldProduct(Integer productSku, Integer quantity) { 
-		return iProductCatalogRepo.updateSoldProduct(productSku, quantity);
+	public void updateSoldProduct(Integer productSku, Integer quantity) {
+		iProductCatalogRepo.updateSoldProduct(productSku, quantity);
 	}
 
 }
