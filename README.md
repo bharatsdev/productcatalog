@@ -15,8 +15,9 @@
 	- mvn clean
 	- mvn install
 	------
+	- docker-compose build
 	- docker-compose up
-	- docker-compose up --force-recreate --build
+	- docker-compose down
 	- docker image prune -f
 	
 
