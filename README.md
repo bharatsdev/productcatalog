@@ -2,16 +2,25 @@
 
 ### Tech Stack
 
-- Spring Boot
-- Java 8
-- Junit
-- H2
-- Docker
-- Docker-compose
-- Tomcat
+	- Spring Boot
+	- Java 8
+	- Junit
+	- H2
+	- Docker
+	- Docker-compose
+	- Tomcat
 
+### Build & Deploy
 
-### endpoints
+	- mvn clean
+	- mvn install
+	------
+	- docker-compose up
+	- docker-compose up --force-recreate --build
+	- docker image prune -f
+	
+
+### Service EndPoint
 	Search Product Catalog by SKU number
 		http://localhost:8080/productcatalog/{productsku}
 
@@ -21,6 +30,6 @@
 
 		
 ## TODO
--- Separte Services (Search and Buy the product)
--- Use Queue
--- Horizontal Scaling  micro-services
+	-- Micro-Services (Search and Buy the product)
+	-- Use Queue
+	-- Horizontal Scaling  Micro-services
