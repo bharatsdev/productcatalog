@@ -1,9 +1,8 @@
 /**
  * 
  */
-package com.sapient.onlineshopping.entity;
+package com.sapient.shopping.entity;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -13,14 +12,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author b.singh
@@ -30,14 +28,39 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Product {
+@ToString
+public class ProductCatalog{
+	public ProductCatalog() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer productCatalogId;
+
+	@Column
+	private Integer brandId;
+
+	@Column(nullable = false)
 	private Integer productId;
 
-	@Column(nullable=false)
-	private String productName;
+	@Column(nullable = false)
+	private float productPrice;
 
+	@Column(nullable = false)
+	private Integer productCount;
+	
+	@Column(nullable = false)
+	private String productColor;
+
+	@Column(nullable = false)
+	private Integer productSize;
+	
+	@Column(nullable = false)
+	private Integer productSku;
+
+	@Column(nullable = false)
+	private Integer sellerId;
 
 	@Column(nullable = true, insertable = true, updatable = false)
 	@CreationTimestamp
@@ -52,5 +75,4 @@ public class Product {
 
 	@Column(nullable = true)
 	private String updatedBy;
-
 }

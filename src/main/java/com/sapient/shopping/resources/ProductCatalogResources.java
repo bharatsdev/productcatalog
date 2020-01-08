@@ -1,4 +1,4 @@
-package com.sapient.onlineshopping.resources;
+package com.sapient.shopping.resources;
 
 import java.io.IOException;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import com.sapient.onlineshopping.service.IProductCatalogService;
-import com.sapient.onlineshopping.service.Impl.SseService;
+import com.sapient.shopping.service.IProductCatalogService;
+import com.sapient.shopping.service.Impl.SseService;
 
 @RestController
 public class ProductCatalogResources {

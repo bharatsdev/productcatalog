@@ -1,18 +1,17 @@
 /**
  * 
  */
-package com.sapient.onlineshopping.service.Impl;
+package com.sapient.shopping.service.Impl;
 
 import java.util.List;
 
- 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sapient.onlineshopping.entity.ProductCatalog;
-import com.sapient.onlineshopping.repository.IProductCatalogRepo;
-import com.sapient.onlineshopping.service.IProductCatalogService;
+import com.sapient.shopping.entity.ProductCatalog;
+import com.sapient.shopping.repository.IProductCatalogRepo;
+import com.sapient.shopping.service.IProductCatalogService;
 
 @Service(value = "productCatalogService")
 public class ProductCatalogServiceImpl implements IProductCatalogService {

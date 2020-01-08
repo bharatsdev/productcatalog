@@ -1,4 +1,4 @@
-package com.sapient.onlineshopping.service.Impl;
+package com.sapient.shopping.service.Impl;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import com.sapient.onlineshopping.repository.IProductCatalogRepo;
+import com.sapient.shopping.repository.IProductCatalogRepo;
 
 @Service
 public class SseService {

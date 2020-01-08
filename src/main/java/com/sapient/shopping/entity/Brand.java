@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sapient.onlineshopping.entity;
+package com.sapient.shopping.entity;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -27,13 +27,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Seller {
+public class Brand {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer sellerId;
+	private Integer brandId;
 
 	@Column(nullable = false)
-	private String sellerName;
+	private String brandName;
 
 	@Column(nullable = true, insertable = true, updatable = false)
 	@CreationTimestamp
@@ -48,4 +48,5 @@ public class Seller {
 
 	@Column(nullable = true)
 	private String updatedBy;
+	 
 }

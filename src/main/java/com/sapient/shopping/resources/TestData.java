@@ -1,7 +1,7 @@
 /**
  * 			
  */
-package com.sapient.onlineshopping.resources;
+package com.sapient.shopping.resources;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import com.sapient.onlineshopping.entity.ProductCatalog;
-import com.sapient.onlineshopping.service.IProductCatalogService;
+import com.sapient.shopping.entity.ProductCatalog;
+import com.sapient.shopping.service.IProductCatalogService;
 
 /**
  * @author b.singh

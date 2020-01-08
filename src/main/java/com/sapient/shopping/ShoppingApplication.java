@@ -1,13 +1,13 @@
-package com.sapient.onlineshopping;
+package com.sapient.shopping;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OnlineOrderProcessingApplication {
+public class ShoppingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OnlineOrderProcessingApplication.class, args);
+		SpringApplication.run(ShoppingApplication.class, args);
 	}
 
 }

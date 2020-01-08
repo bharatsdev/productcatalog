@@ -1,8 +1,9 @@
 /**
  * 
  */
-package com.sapient.onlineshopping.entity;
+package com.sapient.shopping.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -12,6 +13,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -27,13 +30,14 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Brand {
+public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer brandId;
+	private Integer productId;
 
-	@Column(nullable = false)
-	private String brandName;
+	@Column(nullable=false)
+	private String productName;
+
 
 	@Column(nullable = true, insertable = true, updatable = false)
 	@CreationTimestamp
@@ -48,5 +52,5 @@ public class Brand {
 
 	@Column(nullable = true)
 	private String updatedBy;
-	 
+
 }

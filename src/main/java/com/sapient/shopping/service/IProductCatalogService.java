@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.sapient.onlineshopping.service;
+package com.sapient.shopping.service;
 
 import java.util.List;
 
-import com.sapient.onlineshopping.entity.ProductCatalog;
+import com.sapient.shopping.entity.ProductCatalog;
 /**
  * @author b.singh
  *

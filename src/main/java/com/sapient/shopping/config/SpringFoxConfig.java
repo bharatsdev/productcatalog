@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sapient.onlineshopping.config;
+package com.sapient.shopping.config;
 
 import org.springframework.context.annotation.Bean;
 

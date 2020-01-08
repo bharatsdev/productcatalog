@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sapient.onlineshopping.service;
+package com.sapient.shopping.service;
 
 /**
  * @author b.singh
