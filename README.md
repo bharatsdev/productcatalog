@@ -18,3 +18,9 @@
 
 	Buy Product By SKU Number
 		http://localhost:8080/productcatalog/{productsku}/{quantity}
+
+		
+## TODO
+-- Separte Services (Search and Buy the product)
+-- Use Queue
+-- Horizontal Scaling  micro-services
