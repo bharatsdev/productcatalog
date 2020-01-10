@@ -1,8 +1,6 @@
-package com.sapient.shopping.service.Impl;
+package com.sapient.shopping.sse;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -14,6 +12,11 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import com.sapient.shopping.repository.IProductCatalogRepo;
 
+/**
+ * This call will help in handling server side event
+ * @author b.singh
+ *
+ */
 @Service
 public class SseService {
 
@@ -30,6 +33,9 @@ public class SseService {
 		emitters.remove(emitter);
 	}
 
+	/**
+	 * Send the  event to connected user, about data modification
+	 */
 	@Async
 	public void changeNofiy(Integer productSku) throws IOException {
 		List<SseEmitter> deadEmitters = new ArrayList<>();

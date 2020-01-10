@@ -9,9 +9,10 @@ import com.sapient.shopping.entity.Product;
 
 
 /**
+ * This class will be use for Product Master data management
  * @author b.singh
  *
  */
-public interface ProductRepo extends JpaRepository<Product, Integer> {
+public interface IProductRepo extends JpaRepository<Product, Integer> {
 
 }

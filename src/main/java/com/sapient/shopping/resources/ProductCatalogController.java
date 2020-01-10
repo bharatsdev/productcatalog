@@ -12,19 +12,31 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import com.sapient.shopping.service.IProductCatalogService;
-import com.sapient.shopping.service.Impl.SseService;
+import com.sapient.shopping.sse.SseService;
 
+/**
+ *
+ * @author b.singh
+ *
+ */
 @RestController
-public class ProductCatalogResources {
+public class ProductCatalogController {
 
 	@Autowired
 	SseService service;
 	
 	@Autowired
 	IProductCatalogService iProductCatalogService;
+	/**
+	 * This method will return the list of product on the base of product sku number. Also register the SSE for this client
+	 * @param productsku : Product SKU number  
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
 
 	@GetMapping("/productcatalog/{productsku}")
-	public ResponseEntity<SseEmitter> doNotify(@PathVariable("productsku") Integer productsku)
+	public ResponseEntity<SseEmitter> doSearchProduct(@PathVariable("productsku") Integer productsku)
 			throws InterruptedException, IOException {
 		final SseEmitter emitter = new SseEmitter();
 		service.addEmitter(emitter);
@@ -33,12 +45,21 @@ public class ProductCatalogResources {
 		emitter.onTimeout(() -> service.removeEmitter(emitter));
 		return new ResponseEntity<>(emitter, HttpStatus.OK);
 	}
+	
+	/**
+	 * This method will get call when user will buy the product. It will also update the other user if any change in product quantity
+	 * @param productsku : SKU number of product, which user want to buy
+	 * @param quantity   : Number of items, user want to buys
+	 * @return
+	 * @throws InterruptedException
+	 * @throws IOException
+	 */
 
 	@PostMapping("/productcatalog/{productsku}/{quantity}")
-	public String saleProduct(@PathVariable("productsku") Integer productsku, @PathVariable("quantity") Integer quantity)
+	public String updateProductCatalog(@PathVariable("productsku") Integer productsku, @PathVariable("quantity") Integer quantity)
 			throws InterruptedException, IOException {		
 		System.out.println(productsku +" <0000> "+quantity);
-		this.iProductCatalogService.updateSoldProduct(productsku,quantity);
+		this.iProductCatalogService.updateProductCatalog(productsku,quantity);
 		service.changeNofiy(productsku);
 		return "OK";
 	}

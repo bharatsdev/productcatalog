@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.sapient.shopping.entity.ProductCatalog;
 
 /**
+ * This class will be use for Product Catalog Processing
  * @author b.singh
  *
  */

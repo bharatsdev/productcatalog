@@ -17,5 +17,8 @@ public interface IProductCatalogService {
 
 	List<ProductCatalog> getByProductSku(Integer productSku);
 
-	void updateSoldProduct(Integer productSku, Integer quantity);
+	/**
+	 * This method will update the product quantity after sale
+	 */
+	void updateProductCatalog(Integer productSku, Integer quantity);
 }

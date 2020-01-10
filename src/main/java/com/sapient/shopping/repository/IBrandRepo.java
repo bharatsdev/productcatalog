@@ -9,9 +9,10 @@ import com.sapient.shopping.entity.Brand;
 
  
 /**
+ * This class will be use for Brand Master data management 
  * @author b.singh
  *
  */
-public interface BrandRepo extends JpaRepository<Brand, Integer> {
+public interface IBrandRepo extends JpaRepository<Brand, Integer> {
 
 }
